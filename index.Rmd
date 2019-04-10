@@ -1,0 +1,56 @@
+---
+title: "Gapminder Analysis"
+output: 
+  html_document:
+      toc: true 
+      toc_float: true
+      theme: cosmo  
+      highlight: zenburn
+      
+---
+
+![](https://www.gapminder.org/wp-content/themes/gapminder/images/logo.png)
+
+# **Background**
+
+Imagine the world as a street. All houses are lined up by income, the poor living to the left and the rich to the right. Everybody else somewhere in between. Where would you live? Would your life look different than your neighbours’ from other parts of the world, who share the same income level? Welcome!
+
+#### Watch this 'Dont Panic - The Facts About Population' documentary here!
+
+
+
+```{r chunk-name}
+print("hello world - this is coding in R through insert R")
+
+```
+
+## **How to use Gapminder** 
+```{r, installation, eval=F}
+install.packages("gapminder") 
+install.packages("dplyr") 
+install.packages("DT") 
+
+```
+
+
+#### Run the library after installation 
+```{r, library, eval=T, warning=F, message=F}
+library("gapminder") 
+library("ggplot2")
+library("plotly")
+```
+
+
+#### Plot using ggplot 
+```{r, ggplot}
+p <- ggplot(gapminder, aes(x=gdpPercap, y=lifeExp, colour=continent)) + geom_point()
+p
+```
+
+
+#### You can view this interactively using ggplotly()
+```{r, interactive plot, eval=F}
+ggplotly(p)
+```
+
+
